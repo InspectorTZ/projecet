@@ -5,20 +5,21 @@
      android:id="@+id/Button1"
      android:layout_width="match_parent"
      android:layout_height="match_parent"
+     android:backgroundTint="#AF1010"
      tools:context=".MainActivity">
 
-     <TextView
-         android:layout_width="184dp"
-         android:layout_height="104dp"
-         android:text="AIM TRAINER"
-         android:textColor="@color/gold"
-         android:textSize="25dp"
-         android:textStyle="bold"
-         app:layout_constraintBottom_toBottomOf="parent"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintTop_toTopOf="parent"
-         app:layout_constraintVertical_bias="0.179" />
+   <TextView
+       android:layout_width="184dp"
+       android:layout_height="104dp"
+       android:text="AIM TRAINER"
+       android:textColor="@color/gold"
+       android:textSize="25dp"
+       android:textStyle="bold"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.179" />
 
    <Button
        android:id="@+id/button33"
@@ -36,7 +37,8 @@
 
    <Button
        android:id="@+id/button21"
-       style="@style/SquareButton"
+       android:backgroundTint="#F11515"
+       android:background="@color/gold"
        android:layout_width="50dp"
        android:layout_height="50dp"
        android:layout_rowWeight="1"
@@ -88,19 +90,19 @@
        tools:layout_editor_absoluteY="306dp" />
 
    <Button
-        android:id="@+id/button31"
-        style="@style/SquareButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:backgroundTint="#0E0909"
-        android:textColorHighlight="#E80C0C"
-        android:textColorLink="#D60F0F"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.534"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button21" />
+       android:id="@+id/button31"
+       style="@style/SquareButton"
+       android:layout_width="50dp"
+       android:layout_height="50dp"
+       android:layout_rowWeight="1"
+       android:layout_columnWeight="1"
+       android:backgroundTint="#0E0909"
+       android:textColorHighlight="#E80C0C"
+       android:textColorLink="#D60F0F"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.534"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/button21" />
 
    <Button
        android:id="@+id/button41"
@@ -144,4 +146,4 @@
        app:layout_constraintTop_toBottomOf="@+id/button33"
        app:layout_constraintVertical_bias="0.0" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+ </androidx.constraintlayout.widget.ConstraintLayout>
