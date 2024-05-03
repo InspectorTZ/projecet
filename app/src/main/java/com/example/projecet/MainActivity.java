@@ -5,11 +5,11 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.Random;
-import android.widget.TextView;
 
 
 
@@ -26,14 +26,16 @@ import android.widget.TextView;
         }
         public Void onButtonClick(View view){
 
-
+            //צריך להוסיף:משתנים של צבעים וגם טיימר ואולי לעשות הכל בלולאה
             Button b= (Button) view;
             b.setBackgroundColor(android:backgroundTint="@android:color/black");
-            if (b.getBackground()==black){
+            //אם הוא לוחץ נכון
+            if (b.getBackground()==black||timerCount==0){
                 b.setBackgroundColor(white);
                 score++;
 
             }
+            //אם הוא לוחץ לא טוב
             else{
                 WrongClick(score);
                 if(b== dialog.BUTTON_POSITIVE||b==dialog.BUTTON_NEUTRAL){
