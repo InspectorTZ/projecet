@@ -1,45 +1,61 @@
 package com.example.projecet;
+import android.app.DatePickerDialog;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import java.util.Random;
+import android.widget.TextView;
 
 
 
 
     public class MainActivity extends AppCompatActivity {
-
+        Random r = new Random();
+        int score=0;
+        AlertDialog wrongClick;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
 
         }
-        public void onButtonClick(View view){
-            Button b= (Button) view;
-            Drawable backgroundDrawable = b.getBackground();
+        public Void onButtonClick(View view){
 
-            if (backgroundDrawable instanceof ColorDrawable)
-            {
-                int color = ((ColorDrawable) backgroundDrawable).getColor();
-                int scor=0;
-                int red = android.graphics.Color.red(color);
-                int green = android.graphics.Color.green(color);
-                int blue = android.graphics.Color.blue(color);
-                scor=scor+1;
-                if (red == 0 && green == 0 && blue == 0) {
-                    System.out.println("SCORE:"+scor);
-                } else {
-                    System.out.println("YOU LOST");
+
+            Button b= (Button) view;
+            b.setBackgroundColor(android:backgroundTint="@android:color/black");
+            if (b.getBackground()==black){
+                b.setBackgroundColor(white);
+                score++;
+
+            }
+            else{
+                WrongClick(score);
+                if(b== dialog.BUTTON_POSITIVE||b==dialog.BUTTON_NEUTRAL){
+                    return onButtonClick(view);
                 }
-            } else {
-                System.out.println("YOU LOST!");
             }
 
 
         }
+        public void WrongClick(int score){
+                AlertDialog.Builder builder=new AlertDialog.Builder( this);
+                builder.setTitle("YOU LOST!" );
+                builder.setMessage("SCORE: "+ score);
+                builder.setPositiveButton("PLAY AGAIN",this);
+                builder.setPositiveButton("RATE THE APP",this);
+                builder.setNeutralButton("Cancel",this);
+                dialog = new builder.create();
+                builder.show();
+
+
+        }
+
 
 
 
