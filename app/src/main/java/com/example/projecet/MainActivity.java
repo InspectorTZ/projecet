@@ -1,5 +1,6 @@
 package com.example.projecet;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -9,12 +10,15 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import java.util.Random;
 
 
 
 
-    public class MainActivity extends AppCompatActivity {
+    public class MainActivity extends AppCompatActivity implements DialogInterface.OnClickListener {
+
         Random r = new Random();
         int score=0;
         AlertDialog wrongClick;
@@ -24,13 +28,13 @@ import java.util.Random;
             setContentView(R.layout.activity_main);
 
         }
-        public Void onButtonClick(View view){
+        public void onButtonClick(View view){
 
-            //צריך להוסיף:משתנים של צבעים וגם טיימר ואולי לעשות הכל בלולאה
+
             Button b= (Button) view;
-            b.setBackgroundColor(android:backgroundTint="@android:color/black");
+            b.setBackgroundColor(ContextCompat.getColor(this, R.color.black));
             //אם הוא לוחץ נכון
-            if (b.getBackground()==black||timerCount==0){
+            if (b.getBackground()=="@color/black"){
                 b.setBackgroundColor(white);
                 score++;
 
@@ -38,9 +42,6 @@ import java.util.Random;
             //אם הוא לוחץ לא טוב
             else{
                 WrongClick(score);
-                if(b== dialog.BUTTON_POSITIVE||b==dialog.BUTTON_NEUTRAL){
-                    return onButtonClick(view);
-                }
             }
 
 
@@ -52,14 +53,16 @@ import java.util.Random;
                 builder.setPositiveButton("PLAY AGAIN",this);
                 builder.setPositiveButton("RATE THE APP",this);
                 builder.setNeutralButton("Cancel",this);
-                dialog = new builder.create();
+                wrongClick = new builder.create();
                 builder.show();
 
 
         }
 
 
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
 
-
+        }
     }
 
